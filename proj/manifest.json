@@ -6,7 +6,8 @@
     "content_scripts": [
         {
             "matches": [
-                "*://www.nicovideo.jp/my/mylist*"
+                "*://www.nicovideo.jp/my/mylist*",
+                "*://www.nicovideo.jp/mylist*"
             ],
             "css": ["select2.min.css", "mylist.css"],
             "js": ["jquery.min.js", "select2.min.js", "script.js"]
@@ -14,7 +15,8 @@
     ],
 
     "permissions": [
-        "*://www.nicovideo.jp/my/mylist*"
+        "*://www.nicovideo.jp/my/mylist*",
+        "*://www.nicovideo.jp/mylist*"
     ],
 
     "manifest_version": 2,

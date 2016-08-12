@@ -105,3 +105,19 @@
     margin-top: 8px;
     color: #666;
 }
+
+body#PAGETOP span.select2-results .myListVideo {
+    font-size: 13px;
+}
+
+body#PAGETOP span.select2-results .myListVideo h5 {
+    font-size: 14px;
+}
+
+body#PAGETOP .select2-selection__rendered {
+    font-size: 13px;
+}
+
+body#PAGETOP .my-search h3 {
+    font-size: 16px;
+}
