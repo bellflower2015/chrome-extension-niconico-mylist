@@ -1,2 +1,2 @@
 # chrome-extension-niconico-mylist
-search plugin for Niconico's mylist
+A search extension for Niconico's mylist

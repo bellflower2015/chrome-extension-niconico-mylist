@@ -1,0 +1,107 @@
+.my-search {
+    display: none;
+    position: relative;
+    width: 970px;
+    margin: 12px auto 0;
+    background: #e8e8e8;
+    border: #000 solid 3px;
+    border-radius: 3px;
+    zoom: 1;
+}
+
+.my-search h3 {
+    color: #fff;
+    font-size: 124%;
+    background: #252525; /* Old browsers */
+    background: -moz-linear-gradient(top,  #252525 0%, #1a1a1a 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#252525), color-stop(100%,#1a1a1a)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #252525 0%,#1a1a1a 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #252525 0%,#1a1a1a 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #252525 0%,#1a1a1a 100%); /* IE10+ */
+    background: linear-gradient(top,  #252525 0%,#1a1a1a 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#252525', endColorstr='#1a1a1a',GradientType=0 ); /* IE6-9 */
+    padding: 4px 16px;
+    word-break: break-all;
+    word-wrap: break-word;
+}
+
+.my-search-box {
+    clear: both;
+    width: 940px;
+    margin: 0;
+    padding: 14px;
+    background: #e8e8e8;
+}
+
+.select2-container--default .select2-results > .select2-results__options {
+    max-height: 400px !important;
+    overflow-y: auto;
+}
+
+.select2-container--default .select2-results__option--highlighted[aria-selected] {
+    background: #e4efff;
+    color: #000;
+}
+
+.my-search-list-box {
+    display: block;
+    overflow-y: auto;
+    position: relative;
+    padding: 12px 0;
+    zoom: 1;
+    border-bottom: #e0e0e0 solid 1px;
+}
+
+.my-search-list-box .thumbContainer {
+    position: relative;
+    float: left;
+    margin-right: 12px;
+    text-align: center;
+}
+
+.my-search-list-box .thumbContainer img {
+    width: 100px;
+    height: 76px;
+}
+
+.my-search-list-box .thumbContainer .videoTime {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    text-align: center;
+    padding: 2px 4px;
+    background: #000;
+    color: #fff;
+    opacity: 0.8;
+}
+
+.my-search-list-box .myListVideo h5 {
+    float: none;
+    font-size: 108%;
+    margin: 0 0 8px 0;
+    border-left: none;
+    line-height: 1.3;
+}
+
+.my-search-list-box .myListVideo ul.metadata {
+    display: inline;
+    background: #e4efff;
+    overflow: hidden;
+    padding: 2px 12px;
+    margin-bottom: 8px;
+}
+
+.my-search-list-box .myListVideo ul.metadata li {
+    display: inline-block;
+    margin-right: 8px;
+}
+
+.my-search-list-box .myListVideo ul.metadata li:last-child {
+    margin-right: 0;
+}
+
+.my-search-list-box .myListVideo p.date {
+    margin-top: 8px;
+    color: #666;
+}
