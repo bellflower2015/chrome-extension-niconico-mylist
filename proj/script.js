@@ -43,7 +43,7 @@ var select2FormatResult = function(state) {
         var first_retrieve = ymdhi(prop.first_retrieve);
         var create_time = ymdhi(prop.create_time);
 
-        return '<div class="my-search-list-box"><div class="thumbContainer"><img src="' + prop.thumbnail_url + '" /><span class="videoTime">' + timeStr + '</span></div><div class="myListVideo"><h5>' + state.text + '</h5><ul class="metadata"><li class="play">再生:' + view_counter + '</li><li class="comment">コメント:' + num_res + '</li><li class="mylist">マイリスト:' + mylist_counter + '</li></ul><p class="date">' + first_retrieve + ' 投稿／' + create_time + ' 登録</p></div></div>';
+        return '<div class="my-search-list-box"><div class="thumbContainer" style="width: 160px; border-radius: 4px; background-color: #000;"><img src="' + prop.thumbnail_url + '" class="video" style="width: auto; height: auto; max-width: 160px; max-height: 90px;" /><span class="videoTime">' + timeStr + '</span></div><div class="myListVideo"><h5>' + state.text + '</h5><ul class="metadata"><li class="play">再生:' + view_counter + '</li><li class="comment">コメント:' + num_res + '</li><li class="mylist">マイリスト:' + mylist_counter + '</li></ul><p class="date">' + first_retrieve + ' 投稿／' + create_time + ' 登録</p></div></div>';
     }
 };
 
@@ -92,11 +92,11 @@ var prepareData = function(data) {
 
 var getMyList = function(href, hash) {
     if (type == 'mypage') {
-        var url = 'http://www.nicovideo.jp/api/deflist/list';
+        var url = '//www.nicovideo.jp/api/deflist/list';
 
         if (hash.match(/\d+/)) {
             var num = hash.match(/\d+/);
-            url = 'http://www.nicovideo.jp/api/mylist/list?group_id=' + num;
+            url = '//www.nicovideo.jp/api/mylist/list?group_id=' + num;
         }
 
         $.ajax({
@@ -109,16 +109,14 @@ var getMyList = function(href, hash) {
         });
         display(href, hash);
     } else if (type == 'public') {
-        if ($('.SYS_box_filter strong') && $('.SYS_box_filter strong').text().length > 0) {
-            var script = $('script').text();
-            if (script && script.length > 0) {
-                var match;
-                if (match = script.match(/Mylist\.preload\(\d+, (.*)\);/)) {
-                    if (match && match[1] && match[1].length > 0) {
-                        var data = {mylistitem: []};
-                        eval('data.mylistitem = ' + match[1]);
-                        prepareData(data);
-                    }
+        var script = $('script').text();
+        if (script && script.length > 0) {
+            var match;
+            if (match = script.match(/Mylist\.preload\(\d+, (.*)\);/)) {
+                if (match && match[1] && match[1].length > 0) {
+                    var data = {mylistitem: []};
+                    eval('data.mylistitem = ' + match[1]);
+                    prepareData(data);
                 }
             }
         }
@@ -130,7 +128,7 @@ var createSelectTag = function() {
     if (type == 'mypage') {
         $('div.wrapper').before('<div class="my-search" id="mySearch"><h3>マイリスト検索</h3><div class="my-search-box"><select id="mySearchSelect"></select></div></div>');
     } else if (type == 'public') {
-        $('ul.tabMenu').before('<div class="my-search" id="mySearch" style="width: 98%;"><h3>マイリスト検索</h3><div class="my-search-box" style="width: 630.55px;"><select id="mySearchSelect"></select></div></div>');
+        $('div#SYS_box_mylist_header').after('<div class="my-search" id="mySearch" style="width: 98%;"><h3>マイリスト検索</h3><div class="my-search-box" style="width: 630.55px;"><select id="mySearchSelect"></select></div></div>');
     } else {
         return;
     }
@@ -159,7 +157,7 @@ var createSelectTag = function() {
             var watch_id = mylistitem[e.params.data.id].watch_id;
             if (watch_id && watch_id.length > 0) {
                 window.open(
-                    'http://www.nicovideo.jp/watch/' + watch_id,
+                    '//www.nicovideo.jp/watch/' + watch_id,
                     '_blank'
                 );
             }
